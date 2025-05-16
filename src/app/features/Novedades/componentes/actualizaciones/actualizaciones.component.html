@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+    <div class="actualizaciones-wrapper">
+      <!-- Sección de nuevos vendedores -->
+      <section class="vendedores">
+        <h3>Nuevos Vendedores</h3>
+        <div class="vendedor" *ngFor="let vendedor of vendedores">
+          <h4>{{ vendedor.nombre }}</h4>
+          <p>{{ vendedor.descripcion }}</p>
+          <a [href]="vendedor.enlace" target="_blank" rel="noopener">Ver Tienda</a>
+          <ul>
+            <li *ngFor="let producto of vendedor.productos">{{ producto }}</li>
+          </ul>
+          <div class="admin-actions" *ngIf="esAdmin">
+            <button class="futuristic-btn" (click)="editarVendedor(vendedor.id)">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="futuristic-btn danger" (click)="eliminarVendedor(vendedor.id)">
+              <i class="fas fa-trash-alt"></i> Eliminar
+            </button>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Sección de últimas noticias -->
+      <section class="noticias">
+        <h3>Últimas Noticias</h3>
+        <div class="noticia" *ngFor="let noticia of noticias">
+          <h4>{{ noticia.titulo }}</h4>
+          <p>{{ noticia.contenido }}</p>
+          <div class="admin-actions" *ngIf="esAdmin">
+            <button class="futuristic-btn" (click)="editarNoticia(noticia.id)">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="futuristic-btn danger" (click)="eliminarNoticia(noticia.id)">
+              <i class="fas fa-trash-alt"></i> Eliminar
+            </button>
+          </div>
+        </div>
+        <button class="futuristic-btn agregar-noticia" (click)="agregarNoticia()" *ngIf="esAdmin">
+          <i class="fas fa-plus"></i> Agregar Noticia
+        </button>
+      </section>
+    </div>
+  </div>
+  

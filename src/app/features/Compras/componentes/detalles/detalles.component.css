@@ -1,0 +1,198 @@
+.content-wrapper {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 3%;
+  background-image: url('/assets/images/backgrounds/fc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.historial-compras {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.compra {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-compra {
+  margin-bottom: 10px;
+}
+
+.info-compra h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.info-compra p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.estado {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acciones button {
+  flex-grow: 1;
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.acciones button:hover {
+  background-color: #0056b3;
+}
+
+.botones-extra {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.botones-extra button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botones-extra button:hover {
+  background-color: #218838;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginacion button {
+  margin: 0 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.paginacion button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.paginacion span {
+  font-size: 16px;
+  color: #333;
+}
+
+.admin-filtro {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-filtro h2 {
+  color: #444;
+  font-size: 2rcap; /* Tamaño de fuente más grande para el título */
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.admin-filtro form {
+  display: flex;
+  align-items: center; /* Centra los campos horizontalmente */
+  gap: 15px; /* Espacio entre los elementos */
+  padding: auto;
+}
+
+.admin-filtro label {
+  font-weight: bold;
+  font-size: 14px; /* Un tamaño de letra más moderno */
+  color: #555; /* Color más sutil */
+}
+
+.admin-filtro input {
+  padding: 10px;
+  width: 70%; /* Se ajusta al 80% del ancho del formulario */
+  max-width: 400px; /* Ancho máximo para que no sea demasiado grande */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px; /* Tamaño de texto más grande */
+  background-color: #fff; /* Fondo blanco para limpieza */
+}
+
+.admin-filtro input:focus {
+  outline: none;
+  border-color: #007bff; /* Bordes azules al hacer clic */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.admin-filtro button {
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordes más redondeados */
+  cursor: pointer;
+  font-size: 16px; /* Texto más grande */
+  transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.admin-filtro button:hover {
+  background-color: #218838; /* Color más oscuro al pasar el mouse */
+}
+
+.admin-filtro button:active {
+  background-color: #1e7e34; /* Color aún más oscuro al hacer clic */
+}
+
+.resultados {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resultados th,
+.resultados td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.resultados th {
+  background-color: #f2f2f2;
+}

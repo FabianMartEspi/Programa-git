@@ -1,0 +1,295 @@
+<link rel="stylesheet" href="/src/app/layout/sidebar/style.css">
+
+  
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary css-sidebar elevation-4">
+    <!-- Brand Logo -->
+    <a [routerLink]="''" class="brand-link">
+      <img src="assets\themes\adminlte\dist\img\fc.jpg" alt="Florescolombialogo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light"><br><b>Flores Colombia</b></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="assets/themes/adminlte/dist/img/florescolombia.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Gaes3</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+ 
+          <!-- Aqui eSoporteComponent
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-bell"></i>
+              <p>
+                Notificaciones
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/informacionp'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Información de Pedidos</p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a [routerLink]="'/notificacionespqrs'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Notificaciones PQRS</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo notificaciones-->                
+       
+           <!-- Aqui encontraremos el Modulo catalogo -->
+               <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-book"></i>
+              <p>
+               Catalogo
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/productos'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Productos</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a [routerLink]="'/categorias'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Categorias</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo catalogo -->
+
+          
+          
+          
+      
+          <!-- Aqui encontraremos el Modulo Novedades -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-newspaper"></i>
+              <p>
+                Novedades
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">1</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">                           
+              <li class="nav-item">
+                <a [routerLink]="'/n_actualizaciones'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Actualizaciones</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo Novedades -->  
+
+
+
+          <!-- Aqui encontraremos el Modulo Ofertas -->  
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-tags"></i>
+              <p>
+                Ofertas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/ofertaspromociones'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Promociones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="'/ofertasdescuentos'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Descuentos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo Ofertas -->  
+
+          <!-- Aqui encontraremos el Modulo Gestion de usuarios -->          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user-cog"></i>
+              <p>
+                Gestión de Usuario
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/perfil'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Perfil</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo Gestion de usuarios --> 
+
+
+          <!-- Aqui encontraremos el Modulo carrito de Compras--> 
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-shopping-cart"></i>
+              <p>
+                Carrito de Compras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/agregarp'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Añadir Productos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo carrito de Compras--> 
+
+
+          <!-- Aqui encontraremos el Modulo Compras--> 
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-shopping-bag"></i>
+              <p>
+                Compras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/monitoreo'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Monitoreo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="'/detalles'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Detalles</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="'/facturas'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Facturas</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo Compras--> 
+
+
+
+          <!-- Aqui encontraremos el Modulo Soporte--> 
+          <li class="nav-header">Soporte</li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-headset"></i>
+              <p>
+                Atención al Cliente
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/soporteenl'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Soporte en Linea</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="'/preguntasf'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Preguntas Frecuentes</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="'/pqrs'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PQRS</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- ./Aqui encontraremos el Modulo Soporte-->
+
+
+           
+          
+          <!-- Aqui encontraremos el Modulo Seguridad-->
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-shield-alt"></i>
+              <p>
+                Seguridad
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a [routerLink]="'/politicas'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Politicas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="'/protocolos'" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Protocolos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Aqui encontraremos el Modulo Seguridad-->
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

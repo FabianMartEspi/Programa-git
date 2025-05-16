@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+  <div class="perfil-contenedor">
+    <h1 class="titulo">Perfil del Usuario</h1>
+
+    <!-- Información Personal -->
+    <div class="info-tarjeta">
+      <h2>Información Personal</h2>
+      <ul>
+        <li><strong>Nombre:</strong> Camila Martínez</li>
+        <li><strong>Fecha de Nacimiento:</strong> 5 de octubre de 1990</li>
+        <li><strong>Género:</strong> Femenino</li>
+      </ul>
+      <button class="btn modificar" aria-label="Modificar Perfil" (click)="modificarPerfil()">Modificar</button>
+    </div>
+
+    <!-- Información de Contacto -->
+    <div class="info-tarjeta">
+      <h2>Información de Contacto</h2>
+      <ul>
+        <li><strong>Correo Principal:</strong> camila.martinez</li>
+        <li><strong>Teléfono:</strong> +57 300 4567890</li>
+        <li><strong>Dirección:</strong> Calle 123 #45-67, Medellín, Colombia</li>
+      </ul>
+      <button class="btn modificar" aria-label="Modificar Información de Contacto" (click)="modificarContactos()">Modificar</button>
+    </div>
+
+    <!-- Historial de Actividad -->
+    <div class="info-tarjeta">
+      <h2>Historial de Actividad</h2>
+      <ul>
+        <li>Inicio de Sesión: 16 de marzo de 2025, 8:00 PM</li>
+        <li>Última Modificación del Perfil: 10 de marzo de 2025, 9:30 AM</li>
+        <li>Actividad Reciente: Compró un Ramo de primavera el 12 de marzo de 2025</li>
+      </ul>
+      <button class="btn historial" aria-label="Ver Historial Completo" (click)="verHistorial()">Ver Todo el Historial</button>
+    </div>
+
+    <!-- Acciones -->
+    <div class="acciones">
+      <button class="btn eliminar" aria-label="Eliminar Cuenta" (click)="eliminarCuenta()">Eliminar Cuenta</button>
+      <button class="btn cerrar-sesion" aria-label="Cerrar Sesión" (click)="cerrarSesion()">Cerrar Sesión</button>
+      <button class="btn notificaciones" aria-label="Configurar Notificaciones" (click)="gestionarNotificaciones()">Configurar Notificaciones</button>
+    </div>
+  </div>
+</div>

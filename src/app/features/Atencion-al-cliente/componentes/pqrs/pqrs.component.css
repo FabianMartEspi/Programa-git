@@ -1,0 +1,73 @@
+.content-wrapper {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 3%;
+    background-image: url('/assets/images/backgrounds/fc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.pqr-form {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pqr-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pqr-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pqr-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.pqr-form input,
+.pqr-form select,
+.pqr-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.pqr-form input:focus,
+.pqr-form select:focus,
+.pqr-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.pqr-form button {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.pqr-form button:hover {
+    background-color: #218838;
+}
+
+.pqr-form button:active {
+    background-color: #1e7e34;
+}

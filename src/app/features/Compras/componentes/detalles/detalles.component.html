@@ -1,0 +1,66 @@
+<div class="content-wrapper">
+  <div class="historial-compras">
+    <h2>Historial de Compras</h2>
+    <div class="compra" *ngFor="let compra of comprasPaginadas">
+      <div class="info-compra">
+        <h3>{{ compra.producto }}</h3>
+        <p>Fecha de compra: {{ compra.fechaCompra }}</p>
+        <p>Estado: <span class="estado">{{ compra.estado }}</span></p>
+        <p>Tienda: {{ compra.tienda }}</p>
+      </div>
+      <div class="acciones">
+        <button (click)="verDetalles(compra.id)">Ver Compra</button>
+        <button (click)="enviarMensaje(compra.id)">Enviar Mensaje</button>
+        <button (click)="comprarDeNuevo(compra.id)">Comprar de Nuevo</button>
+      </div>
+      <div class="botones-extra">
+        <button (click)="redirigirMonitoreo()">Monitoreo</button>
+        <button (click)="redirigirFacturas()">Ver Facturas</button>
+        <button (click)="redirigirHistorial()">Historial</button>
+      </div>
+    </div>
+
+    <!-- Controles de Paginación -->
+    <div class="paginacion">
+      <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Página Anterior</button>
+      <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+      <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas">Página Siguiente</button>
+    </div>
+  </div>
+
+  <div class="admin-filtro">
+    <h2>Panel de Administrador - Rastreo de Pedidos</h2>
+    <form (submit)="filtrarPedidos()">
+      <div>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" [(ngModel)]="filtro.usuario" name="usuario" />
+      </div>
+      <div>
+        <label for="tienda">Tienda:</label>
+        <input type="text" id="tienda" [(ngModel)]="filtro.tienda" name="tienda" />
+      </div>
+      <button type="submit">Filtrar</button>
+    </form>
+
+    <table *ngIf="resultados.length > 0" class="resultados">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Usuario</th>
+          <th>Tienda</th>
+          <th>Estado</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of resultados">
+          <td>{{ pedido.producto }}</td>
+          <td>{{ pedido.usuario }}</td>
+          <td>{{ pedido.tienda }}</td>
+          <td>{{ pedido.estado }}</td>
+          <td>{{ pedido.fechaCompra }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

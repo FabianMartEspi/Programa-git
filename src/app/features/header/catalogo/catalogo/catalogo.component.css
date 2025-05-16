@@ -1,0 +1,187 @@
+/* Estilo para el contenedor principal */
+.content-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; /* Tipografía moderna */
+  background-image: url('/assets/images/backgrounds/fc.jpg'); /* Cambiar a tu fondo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 5%;
+}
+
+.catalogo-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fcfcfc; /* Fondo claro y limpio */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Header del Catálogo */
+.catalogo-header {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #e3e3e3;
+  border-radius: 5px;
+}
+
+.catalogo-header h1 {
+  color: #0078d4; /* Azul moderno estilo Windows */
+  margin: 10px 0;
+  font-size: 2.2em;
+}
+
+.catalogo-header p {
+  color: #333;
+  font-size: 1.2em;
+}
+
+/* Sección de Botones */
+.add-product-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.toggle-form-button {
+  background-color: #0078d4; /* Azul Windows */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.toggle-form-button:hover {
+  background-color: #005a9e; /* Tonalidad más oscura al pasar el mouse */
+  transform: scale(1.05); /* Efecto sutil de aumento */
+}
+
+/* Formulario para Agregar y Editar Productos */
+.add-product-form,
+.edit-product-form {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-form h2,
+.edit-product-form h2 {
+  color: #0078d4; /* Azul moderno */
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Botones dentro de Formularios */
+form button {
+  background-color: #0078d4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #005a9e;
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Catálogo de Productos */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.catalogo-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catalogo-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.catalogo-item h3 {
+  color: #0078d4; /* Azul Windows */
+  margin: 10px 0;
+}
+
+.catalogo-item p {
+  color: #444;
+}
+
+.catalogo-item .btn {
+  margin: 5px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.catalogo-item .btn-add-to-cart {
+  background-color: #02a017; /* Color futurista para añadir al carrito */
+}
+
+.catalogo-item .btn-add-to-cart:hover {
+  background-color: #025e11e1;
+  transform: scale(1.05);
+}
+
+.catalogo-item .btn-edit-product {
+  background-color: #0078d4;
+}
+
+.catalogo-item .btn-edit-product:hover {
+  background-color: #005a9e;
+  transform: scale(1.05);
+}
+
+.catalogo-item .btn-delete-product {
+  background-color: #e81123; /* Rojo más limpio estilo Windows */
+}
+
+.catalogo-item .btn-delete-product:hover {
+  background-color: #c50f1f;
+  transform: scale(1.05);
+}
+

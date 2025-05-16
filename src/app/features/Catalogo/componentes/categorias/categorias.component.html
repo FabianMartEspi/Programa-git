@@ -1,0 +1,74 @@
+<div class="content-wrapper">
+    <div class="categorias">
+      <!-- Panel lateral -->
+      <aside class="sidebar">
+        <h3>Categorías</h3>
+        <div class="accordion">
+          <div class="accordion-item" *ngFor="let categoria of categorias">
+            <!-- Línea de la categoría con botones -->
+            <div class="categoria-header">
+              <span (click)="toggleCategoria(categoria.id)" class="accordion-header">
+                <i class="fas fa-folder"></i> {{ categoria.nombre }}
+              </span>
+              <div class="categoria-actions">
+                <button (click)="editarCategoria(categoria.id)" class="elegant-button small" aria-label="Editar categoría">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button (click)="eliminarCategoria(categoria.id)" class="elegant-button small danger" aria-label="Eliminar categoría">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <button (click)="agregarContenidoCategoria(categoria.id)" class="elegant-button small success" aria-label="Agregar contenido">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Subcategorías desplegables -->
+            <ul class="accordion-content" *ngIf="categoria.abierta">
+              <li *ngFor="let subcategoria of categoria.subcategorias">
+                <a href="#">{{ subcategoria }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button (click)="agregarCategoria()" class="elegant-button" aria-label="Agregar nueva categoría">
+          <i class="fas fa-plus"></i> Agregar Categoría
+        </button>
+      </aside>
+  
+      <!-- Contenido principal -->
+      <main class="productos">
+        <h2>Productos</h2>
+        <button (click)="agregarProducto()" class="elegant-button" aria-label="Agregar nuevo producto">
+          <i class="fas fa-plus"></i> Agregar Producto
+        </button>
+        <div class="grid">
+
+
+            <div class="producto" *ngFor="let producto of productos">
+                <img [src]="producto.imagen" [alt]="producto.nombre" />
+                <h4>{{ producto.nombre }}</h4>
+                <p>{{ producto.precio | currency: 'COP':'symbol' }}</p>
+                <div class="product-actions">
+                  <button (click)="editarProducto(producto.id)" class="elegant-button small" aria-label="Editar producto">
+                    <i class="fas fa-edit"></i> 
+                  </button>
+                  <button (click)="cambiarImagenProducto(producto.id)" class="elegant-button small" aria-label="Cambiar imagen del producto">
+                    <i class="fas fa-image"></i> 
+                  </button>
+                  <button (click)="eliminarProducto(producto.id)" class="elegant-button small danger" aria-label="Eliminar producto">
+                    <i class="fas fa-trash-alt"></i> 
+                  </button>
+                  <!-- Botón de Agregar al Carrito -->
+                  <button (click)="agregarAlCarrito(producto.id)" class="elegant-button small success" aria-label="Agregar al carrito">
+                    <i class="fas fa-shopping-cart"></i> comprar
+                  </button>
+                </div>
+              </div>
+              
+
+
+        </div>
+      </main>
+    </div>
+  </div>
+  

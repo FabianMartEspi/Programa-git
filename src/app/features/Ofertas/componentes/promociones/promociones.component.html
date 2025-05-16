@@ -1,0 +1,21 @@
+<div class="content-wrapper">
+
+    
+    <div class="promociones-container">
+      <h2>Promociones Especiales</h2>
+      <div class="promociones-grid">
+        <div *ngFor="let promo of promociones" class="promocion-card">
+          <img [src]="promo.imageUrl" alt="{{ promo.title }}" />
+          <h3>{{ promo.title }}</h3>
+          <p>{{ promo.description }}</p>
+          <p class="promo-price">Precio: {{ promo.price | currency }}</p>
+          <div class="buttons">
+            <button (click)="addToCart(promo)">Agregar</button>
+            <button (click)="editPromotion(promo)">Editar</button>
+            <button (click)="deletePromotion(promo.id)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

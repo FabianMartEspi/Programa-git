@@ -1,0 +1,42 @@
+.body-creatucuenta {
+  font-family: Arial, sans-serif;
+  background-image: url(./fc.jpg);
+  margin: 0;
+  padding: 5%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 8px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 2px;
+}
+.form-group input {
+  width: 100%;
+  padding: 1px;
+  box-sizing: border-box;
+}
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  border: none;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+}
+.form-group button:hover {
+  background-color: #0056b3;
+}

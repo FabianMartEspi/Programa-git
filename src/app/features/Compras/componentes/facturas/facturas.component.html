@@ -1,0 +1,26 @@
+<div class="content-wrapper">
+    <div class="facturas">
+      <h2>Facturas</h2>
+      <div class="factura" *ngFor="let factura of facturasPaginadas">
+        <div class="info-factura">
+          <h3>{{ factura.producto }}</h3>
+          <p>Usuario: {{ factura.usuario }}</p>
+          <p>Fecha de factura: {{ factura.fechaFactura }}</p>
+          <p>Estado: <span class="estado">{{ factura.estado }}</span></p>
+          <p>Tienda: {{ factura.tienda }}</p>
+        </div>
+        <div class="acciones">
+          <button (click)="verDetalles(factura.id)">Ver Detalles</button>
+          <button (click)="descargarFactura(factura.id)">Descargar Factura</button>
+          <button (click)="enviarFactura(factura.id)">Enviar Factura</button>
+        </div>
+      </div>
+  
+      <!-- Controles de Paginación -->
+      <div class="paginacion">
+        <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Página Anterior</button>
+        <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+        <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas">Página Siguiente</button>
+      </div>
+    </div>
+</div>

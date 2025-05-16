@@ -1,0 +1,84 @@
+<div class="content-wrapper">
+    <div class="soporte-form">
+      <h2>Registro de Soporte en Línea</h2>
+      <form (submit)="registrarSoporte()">
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" [(ngModel)]="soporte.nombre" name="nombre" required />
+        </div>
+        <div>
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" [(ngModel)]="soporte.email" name="email" required />
+        </div>
+        <div>
+          <label for="categoria">Categoría de Soporte:</label>
+          <select id="categoria" [(ngModel)]="soporte.categoria" name="categoria" required>
+            <option value="tecnico">Técnico</option>
+            <option value="facturacion">Facturación</option>
+            <option value="general">General</option>
+          </select>
+        </div>
+        <div>
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" [(ngModel)]="soporte.descripcion" name="descripcion" rows="5" required></textarea>
+        </div>
+        <button type="submit">Registrar Soporte</button>
+      </form>
+    </div>
+</div>
+
+<!--
+
+<div class="content-wrapper">
+    <div class="preguntas-frecuentes-page">
+  
+      <header class="preguntas-frecuentes-header">
+        
+        <h1>SOPORTE EN LÍNEA</h1>
+        
+        <p>En este apartado solucionaremos los inconvenientes que tengas con tus pedidos .</p> 
+        <p>Si no llegaramos a responder tus dudas por este medio, por favor comunícate con nosotros mediante los demás canales indicados en el apartado 'Contacto'.</p>
+      </header>
+
+<div class="card">
+    <div class="card-body">
+        <form action="">
+        <div class="mb-2">
+            <label class="form-label">
+                <h2>
+                Nombre:
+            </h2>
+            </label>
+
+            <input type="text" class="form-control" placeholder="Ingresa tu nombre por favor">
+
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label">
+                <h2>
+                Correo:
+            </h2>
+            </label>
+
+            <input type="text" class="form-control" placeholder="Ingrese tu correo electrónico">
+
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label">
+                <h2>
+                Consulta:
+            </h2>
+            </label>
+
+            <input type="text" class="form-control" placeholder="Escribe en este campo la información con la que podemos ayudar:">
+
+        </div>
+
+        <button>
+            Enviar
+        </button>
+
+    </form>  
+-->

@@ -1,0 +1,106 @@
+/* Contenedor principal que agrupa todo */
+.content-wrapper {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 3%;
+  background-image: url('/assets/images/backgrounds/fc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+
+.productos-container {
+  max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto introductorio */
+.intro-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Contenedor para el contenido principal */
+.wrapper {
+  margin: 0 auto; /* Centra el contenido */
+  padding: 20px;
+  
+}
+
+/* Contenedor de los descuentos */
+.descuentos-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo de la cuadrícula de descuentos */
+.descuentos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilo de las tarjetas de descuento */
+.descuento-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(25% - 40px); /* Ajusta el tamaño de las tarjetas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 300px; /* Ancho máximo */
+  background-color: white;
+}
+
+.descuento-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.descuento-card p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.descuento-card .buttons {
+  display: flex;
+  justify-content: space-between; /* Distribuir botones */
+  margin-top: 10px; /* Espaciado arriba */
+  gap: 10px; /* Espaciado entre botones */
+}
+
+.descuento-card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em; /* Tamaño de fuente */
+  flex: 1; /* Botones del mismo ancho */
+}
+
+.descuento-card button:hover {
+  background-color: #45a049;
+}

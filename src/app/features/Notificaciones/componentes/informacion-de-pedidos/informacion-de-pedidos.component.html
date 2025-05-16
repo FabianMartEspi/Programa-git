@@ -1,0 +1,109 @@
+<div class="content-wrapper">
+
+  <div class="container">
+    <h1>Gestión de Información de Pedidos</h1>
+  
+    <!-- Barra de búsqueda y botón -->
+    <div class="search-bar">
+      <input #searchInput type="text" placeholder="Buscar por producto o fabricante">
+      <button (click)="buscar(searchInput.value)">Buscar</button>
+      <button (click)="toggleFormulario()">Nuevo Pedido</button>
+    </div>
+  
+    <!-- Formulario para agregar un nuevo pedido -->
+    <div *ngIf="mostrarFormulario" class="formulario">
+      <h2>Agregar Nuevo Pedido</h2>
+      <form (ngSubmit)="agregarPedido()">
+        <!-- Campos del formulario -->
+        <label for="codigo">Código:</label>
+        <input id="codigo" [(ngModel)]="nuevoPedido.codigo" name="codigo" required>
+  
+        <label for="imagen">URL de la Imagen:</label>
+        <input id="imagen" [(ngModel)]="nuevoPedido.imagen" name="imagen">
+  
+        <label for="modelo">Modelo:</label>
+        <input id="modelo" [(ngModel)]="nuevoPedido.modelo" name="modelo" required>
+  
+        <label for="producto">Producto:</label>
+        <input id="producto" [(ngModel)]="nuevoPedido.producto" name="producto" required>
+  
+        <label for="fabricante">Fabricante:</label>
+        <input id="fabricante" [(ngModel)]="nuevoPedido.fabricante" name="fabricante" required>
+  
+        <label for="categoria">Categoría:</label>
+        <input id="categoria" [(ngModel)]="nuevoPedido.categoria" name="categoria" required>
+  
+        <label for="estado">Estado:</label>
+        <input id="estado" [(ngModel)]="nuevoPedido.estado" name="estado" required>
+  
+        <label for="precio">Precio:</label>
+        <input id="precio" type="number" [(ngModel)]="nuevoPedido.precio" name="precio" required>
+  
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="cancelarFormulario()">Cancelar</button>
+      </form>
+    </div>
+  
+    <!-- Tabla de pedidos -->
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Imagen</th>
+          <th>Modelo</th>
+          <th>Producto</th>
+          <th>Fabricante</th>
+          <th>Categoría</th>
+          <th>Estado</th>
+          <th>Precio</th>
+          <th>Fecha de Pedido</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of visiblePedidos; let i = index">
+          <td *ngIf="!pedido.editando">{{ pedido.codigo }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.codigo"></td>
+  
+          <td><img [src]="pedido.imagen" alt="Imagen del producto" width="50"></td>
+  
+          <td *ngIf="!pedido.editando">{{ pedido.modelo }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.modelo"></td>
+  
+          <td *ngIf="!pedido.editando">{{ pedido.producto }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.producto"></td>
+  
+          <td *ngIf="!pedido.editando">{{ pedido.fabricante }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.fabricante"></td>
+  
+          <td *ngIf="!pedido.editando">{{ pedido.categoria }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.categoria"></td>
+  
+          <td *ngIf="!pedido.editando">{{ pedido.estado }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.estado"></td>
+  
+          <td *ngIf="!pedido.editando">{{ pedido.precio }}</td>
+          <td *ngIf="pedido.editando"><input [(ngModel)]="pedido.precio"></td>
+  
+          <td>{{ pedido.fechaPedido }}</td>
+          <td>
+            <button *ngIf="!pedido.editando" (click)="editarPedido(i)">Editar</button>
+            <button *ngIf="pedido.editando" (click)="guardarEdicion(i)">Guardar</button>
+            <button *ngIf="pedido.editando" (click)="cancelarEdicion(i)">Cancelar</button>
+            <button (click)="eliminarPedido(i)">Eliminar</button>
+            <button (click)="enviarNotificacion(pedido)">Enviar Notificación</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="pagination">
+      <button (click)="paginaAnterior()">Anterior</button>
+      <button (click)="siguientePagina()">Siguiente</button>
+    </div>
+  </div>
+  
+  
+      
+</div>
+

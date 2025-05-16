@@ -1,0 +1,83 @@
+<div class="content-wrapper">
+  <!-- Contenido principal de la página -->
+  <main class="contenedor">
+
+    <!-- Sección de filtros -->
+    <section class="filtros">
+      <h2>Filtrar PQRS</h2>
+      
+      <label for="filtroRadicado">Número de radicado:</label>
+      <input id="filtroRadicado" type="text" placeholder="Filtrar por radicado" (input)="filtrarPorRadicado($event)" />
+  
+      <label for="filtroTipo">Tipo de solicitud:</label>
+      <select id="filtroTipo" (change)="filtrarPorTipo($event)">
+        <option value="">Todos</option>
+        <option value="Petición">Petición</option>
+        <option value="Queja">Queja</option>
+        <option value="Reclamo">Reclamo</option>
+        <option value="Solicitud">Solicitud</option>
+      </select>
+  
+      <label for="filtroUsuario">Tipo de usuario:</label>
+      <select id="filtroUsuario" (change)="filtrarPorUsuario($event)">
+        <option value="">Todos</option>
+        <option value="Docente">Vendedor</option>
+        <option value="Estudiante">Comprador</option>
+        <option value="Administrador">Administrador</option>
+      </select>
+  
+      <button (click)="crearPqrs()">Buscar PQRS</button>
+    </section>
+  
+    <!-- Tabla con los datos -->
+    <section class="tabla-pqrs">
+      <h2>Listado de PQRS</h2>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Radicado</th>
+            <th>Tipo</th>
+            <th>Solicitud</th>
+            <th>Usuario</th>
+            <th>Respuesta</th>
+            <th>Satisfacción</th>
+            <th *ngIf="esAdministrador">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iteramos sobre cada PQRS en listaPqrs -->
+          <ng-container *ngFor="let pqr of listaPqrs">
+            <tr>
+              <td>{{ pqr.id }}</td>
+              <td>{{ pqr.radicado }}</td>
+              <td>{{ pqr.tipo }}</td>
+              <td>{{ pqr.solicitud }}</td>
+              <td>{{ pqr.usuarioNombre }}</td>
+              <td>{{ pqr.fechaRespuesta }}</td>
+              <td>{{ pqr.satisfaccion || 'No calificado' }}</td>
+              <td *ngIf="esAdministrador">
+                <button (click)="toggleAcciones(pqr)">Acciones</button>
+                <div *ngIf="pqr.mostrarAcciones" class="acciones-dropdown">
+                  <button (click)="responder(pqr)">Responder</button>
+                  <button (click)="eliminar(pqr)">Eliminar</button>
+                  <button (click)="guardarEdicion(pqr)">Guardar Cambios</button>
+                </div>
+              </td>
+            </tr>
+            <!-- Área de Respuesta Dinámica -->
+            <tr *ngIf="pqr.mostrarRespuesta">
+              <td colspan="8">
+                <textarea [(ngModel)]="pqr.respuesta" placeholder="Escribe tu respuesta aquí"></textarea>
+                <button (click)="enviarRespuesta(pqr)">Enviar y Notificar</button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+ 

@@ -1,0 +1,107 @@
+.content-wrapper {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 3%;
+    background-image: url('/assets/images/backgrounds/fc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.monitoreo-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.monitoreo-pedidos {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pedido {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-pedido {
+    margin-bottom: 10px;
+}
+
+.info-pedido h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.info-pedido p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.estado {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.acciones button {
+    flex-grow: 1;
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.acciones button:hover {
+    background-color: #0056b3;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.paginacion button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.paginacion button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.paginacion span {
+    font-size: 16px;
+    color: #333;
+}

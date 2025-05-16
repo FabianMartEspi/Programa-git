@@ -1,0 +1,47 @@
+<div class="content-wrapper">
+    <div class="containergeneral">
+  
+      <section id="quienes-somos">
+        <h2>{{ secciones.quienesSomos.titulo }}</h2>
+        <p>{{ secciones.quienesSomos.contenido }}</p>
+        <button (click)="editarSeccion('quienesSomos')">Editar</button>
+        <button (click)="eliminarSeccion('quienesSomos')">Eliminar</button>
+      </section>
+  
+      <section id="mision">
+        <h2>{{ secciones.mision.titulo }}</h2>
+        <p>{{ secciones.mision.contenido }}</p>
+        <button (click)="editarSeccion('mision')">Editar</button>
+        <button (click)="eliminarSeccion('mision')">Eliminar</button>
+      </section>
+  
+      <section id="vision">
+        <h2>{{ secciones.vision.titulo }}</h2>
+        <p>{{ secciones.vision.contenido }}</p>
+        <button (click)="editarSeccion('vision')">Editar</button>
+        <button (click)="eliminarSeccion('vision')">Eliminar</button>
+      </section>
+  
+      <section id="servicios">
+        <h2>{{ secciones.servicios.titulo }}</h2>
+        <ul *ngIf="esArray(secciones.servicios.contenido)">
+          <li *ngFor="let servicio of secciones.servicios.contenido">{{ servicio }}</li>
+        </ul>
+        <p *ngIf="!esArray(secciones.servicios.contenido)">
+          {{ secciones.servicios.contenido }}
+        </p>
+        <button (click)="editarSeccion('servicios')">Editar</button>
+        <button (click)="eliminarSeccion('servicios')">Eliminar</button>
+      </section>
+  
+      <section id="calidad-sostenibilidad">
+        <h2>{{ secciones.calidadSostenibilidad.titulo }}</h2>
+        <p>{{ secciones.calidadSostenibilidad.contenido }}</p>
+        <button (click)="editarSeccion('calidadSostenibilidad')">Editar</button>
+        <button (click)="eliminarSeccion('calidadSostenibilidad')">Eliminar</button>
+      </section>
+  
+      <button (click)="agregarNuevoTema()">Agregar Nuevo Tema</button>
+    </div>
+  </div>
+  

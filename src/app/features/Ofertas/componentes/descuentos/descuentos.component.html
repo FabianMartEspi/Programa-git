@@ -1,0 +1,20 @@
+<div class="content-wrapper">
+  
+    
+    <div class="descuentos-container">
+      <h2>Descuentos Especiales</h2>
+      <div class="descuentos-grid">
+        <div *ngFor="let descuento of descuentos" class="descuento-card">
+          <h3>{{ descuento.title }}</h3>
+          <p>{{ descuento.description }}</p>
+          <p><strong>Código de descuento:</strong> {{ descuento.codigo }}</p>
+          <div class="buttons">
+            <button (click)="addToCart(descuento)">Aplicar</button>
+            <button (click)="editDiscount(descuento)">Editar</button>
+            <button (click)="deleteDiscount(descuento.id)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,89 @@
+<div class="content-wrapper">
+  <div class="catalogo-page">
+    
+    <header class="catalogo-header">
+      <h1>CONOCE NUESTROS PRODUCTOS</h1>
+      <p>
+        ¡Bienvenido al paraíso floral de Flores Colombia! Explora nuestra colección de flores. 
+        Desde elegantes rosas hasta exóticas orquídeas, cada ejemplar de nuestro catálogo es 
+        un testimonio de la belleza natural de Colombia.
+      </p>
+    </header>
+
+    <!-- Botón para mostrar/ocultar el formulario -->
+    <div class="add-product-section">
+      <button (click)="toggleForm()" class="toggle-button toggle-form-button">
+        <i class="{{ isFormVisible ? 'fas fa-minus-circle' : 'fas fa-plus-circle' }}"></i>
+        {{ isFormVisible ? ' Minimizar "Agregar Nuevo Producto"' : ' Agregar Producto' }}
+      </button>
+    </div>
+
+    <!-- Formulario para agregar productos -->
+    <div *ngIf="isFormVisible" class="add-product-form">
+      <h2>Agregar Nuevo Producto</h2>
+      <form (ngSubmit)="addProduct()">
+
+        <label for="productName">Nombre del Producto</label>
+        <input id="productName" type="text" placeholder="Nombre del producto" 
+               [(ngModel)]="newProduct.name" name="name" required>
+
+        <label for="productPrice">Precio</label>
+        <input id="productPrice" type="number" placeholder="Precio" 
+               [(ngModel)]="newProduct.price" name="price" required>
+
+        <label for="productQuantity">Cantidad Disponible</label>
+        <input id="productQuantity" type="number" placeholder="Cantidad Disponible" 
+               [(ngModel)]="newProduct.quantity" name="quantity" required>
+
+        <label for="productImage">Imagen</label>
+        <input id="productImage" type="file" (change)="onFileSelected($event)" required>
+
+        <button type="submit" class="btn btn-add-product">Agregar Producto</button>
+      </form>
+    </div>
+
+    <!-- Catálogo de productos -->
+    <div class="catalogo-grid">
+      <div class="catalogo-item" *ngFor="let flower of flowers">
+        <img [src]="flower.imageUrl" [alt]="flower.name">
+        <h3>{{ flower.name }}</h3>
+        <p><strong>Precio:</strong> {{ flower.price | currency }}</p>
+        <p><strong>Cantidad Disponible:</strong> {{ flower.quantity }}</p>
+
+        <!-- Botón agregar al carrito -->
+        <button (click)="addToCart(flower)" class="btn btn-add-to-cart">
+          <i class="fas fa-cart-plus"></i>
+        </button>
+        
+        <!-- Botón editar producto -->
+        <button (click)="editProduct(flower)" class="btn btn-edit-product">
+          <i class="fas fa-edit"></i>
+        </button>
+        
+        <!-- Botón eliminar producto -->
+        <button (click)="deleteProduct(flower)" class="btn btn-delete-product">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Formulario para editar productos -->
+    <div *ngIf="selectedProduct" class="edit-product-form">
+      <h2>Editar Producto</h2>
+      <form (ngSubmit)="updateProduct()">
+        <input type="text" [(ngModel)]="selectedProduct.name" name="name" required>
+        <input type="number" [(ngModel)]="selectedProduct.price" name="price" required>
+        <input type="number" [(ngModel)]="selectedProduct.quantity" name="quantity" required>
+        <input type="file" (change)="onEditFileSelected($event)">
+        
+        <!-- Contenedor para alinear los botones -->
+        <div class="button-group">
+          <button type="submit" class="btn btn-save-changes">Guardar Cambios</button>
+          <button type="button" (click)="selectedProduct = null" class="btn btn-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

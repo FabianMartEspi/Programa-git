@@ -1,0 +1,107 @@
+<div class="content-wrapper">
+    <div class="contenedor">
+      <header>
+        <h1>Lista de Productos</h1>
+      </header>
+  
+      <section class="formulario-control">
+        <button class="boton-windows" (click)="mostrarFormulario = !mostrarFormulario">
+          {{ mostrarFormulario ? "Ocultar Formulario" : "Agregar Producto" }}
+        </button>
+      </section>
+  
+      <section *ngIf="mostrarFormulario" class="formulario-agregar">
+        <header>
+          <h2>Agregar Nuevo Producto</h2>
+        </header>
+        <form (ngSubmit)="agregarNuevoProducto()" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" [(ngModel)]="nuevoProducto.nombre" type="text" placeholder="Nombre del producto" name="nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="precio">Precio:</label>
+            <input id="precio" [(ngModel)]="nuevoProducto.precio" type="number" placeholder="Precio" name="precio" required min="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="vigencia">Fecha de Vigencia:</label>
+            <input id="vigencia" [(ngModel)]="nuevoProducto.vigencia" type="date" name="vigencia" required />
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" [(ngModel)]="nuevoProducto.descripcion" rows="4" name="descripcion" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input id="imagen" type="file" (change)="cargarImagen($event, nuevoProducto)" />
+          </div>
+          <div class="form-group">
+            <button class="boton-windows" type="submit">Guardar</button>
+          </div>
+        </form>
+      </section>
+  
+      <section class="tabla-productos-wrapper">
+        <table class="tabla-productos">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Vigencia</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos">
+              <td>{{ producto.id }}</td>
+              <td>
+                <div *ngIf="editandoId === producto.id; else mostrarImagen">
+                  <input type="file" (change)="cargarImagenEdicion($event, producto)" />
+                </div>
+                <ng-template #mostrarImagen>
+                  <img *ngIf="producto.imagen" [src]="producto.imagen" alt="Imagen del producto" class="imagen-producto" />
+                </ng-template>
+              </td>
+              <td>
+                <div *ngIf="editandoId === producto.id; else mostrarNombre">
+                  <input [(ngModel)]="producto.nombre" type="text" />
+                </div>
+                <ng-template #mostrarNombre>{{ producto.nombre }}</ng-template>
+              </td>
+              <td>
+                <div *ngIf="editandoId === producto.id; else mostrarPrecio">
+                  <input [(ngModel)]="producto.precio" type="number" />
+                </div>
+                <ng-template #mostrarPrecio>${{ producto.precio.toFixed(2) }}</ng-template>
+              </td>
+              <td>
+                <div *ngIf="editandoId === producto.id; else mostrarVigencia">
+                  <input [(ngModel)]="producto.vigencia" type="date" />
+                </div>
+                <ng-template #mostrarVigencia>{{ producto.vigencia }}</ng-template>
+              </td>
+              <td>
+                <div *ngIf="editandoId === producto.id; else mostrarDescripcion">
+                  <textarea [(ngModel)]="producto.descripcion" rows="2"></textarea>
+                </div>
+                <ng-template #mostrarDescripcion>{{ producto.descripcion }}</ng-template>
+              </td>
+              <td class="acciones">
+                <button *ngIf="editandoId !== producto.id; else guardarBoton" class="boton-windows" (click)="editarProducto(producto.id)">
+                  Editar
+                </button>
+                <ng-template #guardarBoton>
+                  <button class="boton-windows" (click)="guardarEdicion()">Guardar</button>
+                </ng-template>
+                <button class="boton-windows" (click)="eliminarProducto(producto.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+  

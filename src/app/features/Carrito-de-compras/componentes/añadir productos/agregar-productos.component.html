@@ -1,0 +1,45 @@
+<div class="content-wrapper"> 
+
+
+  <div class="productos-container">
+    <h2>Agregar Productos</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{ producto.nombre }}</td>
+          <td>
+            <input
+            type="number"
+            [value]="producto.cantidad"
+           
+
+            min="1"
+          /> 
+          
+          </td>
+          <td>{{ producto.precio | currency:'COP' }}</td>
+          <td>{{ (producto.cantidad * producto.precio) | currency:'COP' }}</td>
+          <td>
+            <button (click)="eliminarProducto(producto.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="acciones">
+      <button (click)="revisarSeleccion()">Agregar productos</button>
+      <button (click)="revisarSeleccion()">Revisar Selección</button>
+      <button (click)="continuarCompra()">Continuar Compra</button>
+    </div>
+  </div>
+</div>

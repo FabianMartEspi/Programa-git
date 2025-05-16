@@ -1,0 +1,101 @@
+/* Contenedor principal que agrupa todo */
+.content-wrapper {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 3%;
+  background-image: url('/assets/images/backgrounds/fc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Wrapper para el contenido principal */
+.wrapper {
+  margin-left: 260px; /* Ajusta el margen izquierdo para que no invada el sidebar */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+.promociones-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.promociones-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.promocion-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(25% - 40px); /* Ajusta el tamaño de las tarjetas según sea necesario */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 300px; /* Ajusta el ancho máximo según sea necesario */
+  background-color: white;
+}
+
+.promocion-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.promocion-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.promocion-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+.promocion-card .promo-price {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.promocion-card .buttons {
+  display: flex;
+  justify-content: space-between; /* Distribuir los botones horizontalmente */
+  margin-top: 10px; /* Espacio superior para separar de otros elementos */
+  gap: 10px; /* Espacio entre botones */
+}
+
+.promocion-card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Ajusta el tamaño del botón */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em; /* Ajusta el tamaño de la fuente */
+  flex: 1; /* Hace que todos los botones tengan el mismo ancho */
+}
+
+.promocion-card button:hover {
+  background-color: #45a049;
+}

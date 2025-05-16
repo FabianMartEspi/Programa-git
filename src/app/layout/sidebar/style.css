@@ -1,0 +1,41 @@
+/* CSS para la clase css-sidebar */
+.css-sidebar {
+    background-color: rgba(0, 128, 255, 0.5); /* Cambia este color al que prefieras */
+
+    color: rgb(2, 2, 2); /* Color del texto para asegurar buena legibilidad */
+  }
+  
+  /* CSS adicional para la estructura y estilo */
+  .main-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 250px; /* Ancho de la sidebar, puedes ajustarlo según tus necesidades */
+    padding: 20px; /* Espacio interior */
+  }
+  
+  .sidebar .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: rgba(7, 3, 3, 0.808); /* Color del texto de los enlaces */
+  }
+  
+  .sidebar .nav-item .nav-link:hover {
+    background-color: rgba(218, 9, 9, 0.1); /* Fondo al pasar el ratón por encima */
+  }
+  
+  .sidebar .nav-item .nav-treeview {
+    display: none; /* Inicialmente ocultamos los submenús */
+  }
+  
+  .sidebar .nav-item .nav-treeview .nav-item .nav-link {
+    padding-left: 30px; /* Sangría para los elementos del submenú */
+    color: #0501017c; /* Color del texto de los enlaces del submenú */
+  }
+  
+  .sidebar .nav-item.active > .nav-treeview {
+    display: block; /* Mostrar submenú cuando el elemento padre está activo */
+  }
+  

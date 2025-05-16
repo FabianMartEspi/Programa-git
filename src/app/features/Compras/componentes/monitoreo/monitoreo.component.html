@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+
+    <div class="monitoreo-page">
+  
+  <div class="card">
+      <div class="card-body">
+  
+          <form action="">
+  
+          <div class="mb-2">
+              <label class="form-label">
+                <h1>RASTREA TU ORDEN</h1>
+          
+              </label>
+  
+              <p>Para rastrear su pedido, ingrese su ID de pedido en el recuadro a continuación y presione el botón "Rastrear".</p> 
+              <p>El número de 'ID de Pedido' se le proporcionó en su recibo o factura y en el correo electrónico de confirmación que debería haber recibido.</p>
+                  
+  
+              <input type="text" class="form-control" placeholder="Ingresa tu Dirección de Correo Electrónico">
+  
+          </div>
+  
+          <button>
+              Buscar
+          </button>
+  
+          <p>
+              En este apartado encontraras tu historial de facturas, tanto entregadas como las pendientes por entregar.
+          </p>
+      </form>
+
+    <div class="monitoreo-pedidos">
+      <h2>Monitoreo de Pedidos</h2>
+      <div class="pedido" *ngFor="let pedido of pedidosPaginados">
+        <div class="info-pedido">
+          <h3>{{ pedido.producto }}</h3>
+          <p>Usuario: {{ pedido.usuario }}</p>
+          <p>Fecha de pedido: {{ pedido.fechaPedido }}</p>
+          <p>Estado: <span class="estado">{{ pedido.estado }}</span></p>
+          <p>Tienda: {{ pedido.tienda }}</p>
+        </div>
+        <div class="acciones">
+          <button (click)="verDetalles(pedido.id)">Ver Detalles</button>
+          <button (click)="actualizarEstado(pedido.id)">Actualizar Estado</button>
+          <button (click)="cancelarPedido(pedido.id)">Cancelar Pedido</button>
+        </div>
+      </div>
+  
+      <!-- Controles de Paginación -->
+      <div class="paginacion">
+        <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Página Anterior</button>
+        <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+        <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas">Página Siguiente</button>
+      </div>
+    </div>
+</div>

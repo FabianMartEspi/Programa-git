@@ -1,0 +1,20 @@
+<div class="content-wrapper">
+    <div class="catalogo-page">
+
+        <header class="catalogo-header">
+          <h1>CONOCE NUESTROS PRODUCTOS</h1>
+          <p>¡Bienvenido al paraíso floral de Flores Colombia! Explora nuestra colección de flores. Desde elegantes rosas hasta exóticas orquídeas, cada ejemplar de nuestro catálogo es un testimonio de la belleza natural de Colombia.</p>
+        </header>
+      
+
+        <div class="catalogo-grid">
+          <div class="catalogo-item" *ngFor="let flower of flowers">
+            <img [src]="flower.imageUrl" [alt]="flower.name">
+            <h3>{{ flower.name }}</h3>
+            <p><strong>Precio:</strong> {{ flower.price | currency }}</p>
+            <button (click)="addToCart(flower)">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      
+</div>
